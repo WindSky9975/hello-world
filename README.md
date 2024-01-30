@@ -1,6 +1,8 @@
  之前github项目拉取超时，最后我搞了好久才成功，希望能够帮助大家。 
 
-注：所有命令均在gitbash中输入 ![image-20240130214737106](C:\Users\30845\AppData\Roaming\Typora\typora-user-images\image-20240130214737106.png)
+注：所有命令均在gitbash中输入
+
+ ![img](https://img-blog.csdnimg.cn/direct/94d8d3fe8e7b437dbc4aa38aa4390e80.png)
 
 # 一、 步骤一
 
@@ -12,8 +14,6 @@
 ssh -T -p 443 git@ssh.github.com
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
-
 我遇见的情况是这样的：
 
 ```bash
@@ -24,7 +24,7 @@ This host key is known by the following other names/addresses:
 Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 这个提示是在SSH连接时的服务器身份验证过程中出现的。它告诉你，目前还没有保存该服务器的公钥，因此无法确认连接的主机是否真实可信。你需要进行确认以确保你连接到的是正确的 GitHub 服务器。
 
@@ -37,7 +37,7 @@ Warning: Permanently added '[ssh.github.com]:443' (ED25519) to the list of known
 Connection closed by 20.205.243.160 port 443
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 这表示 SSH 客户端已经将 GitHub 的 SSH 服务器的公钥添加到你的本地 "known_hosts" 文件，以后连接时将不再显示类似的警告，除非服务器的密钥发生变化。
 
@@ -47,7 +47,7 @@ Connection closed by 20.205.243.160 port 443
 ssh -T -p 443 git@ssh.github.com
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 这时会弹出：
 
@@ -55,7 +55,7 @@ ssh -T -p 443 git@ssh.github.com
 > Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 这时候如果发现还是无法拉取，就进行下一步 
 
@@ -71,7 +71,7 @@ ssh -T -p 443 git@ssh.github.com
 nano ~/.ssh/config
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## 2.如果文件不存在，你可以创建一个
 
@@ -81,7 +81,7 @@ nano ~/.ssh/config
 cd ~
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## 4.检查是否有 `.ssh` 文件夹。如果没有，你可以创建一个
 
@@ -89,7 +89,7 @@ cd ~
 mkdir ~/.ssh
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## 5. 进入 `.ssh` 文件夹
 
@@ -97,7 +97,7 @@ mkdir ~/.ssh
 cd ~/.ssh
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## 6.创建 `config` 文件。你可以使用文本编辑器，如 `nano` 或 `vi`
 
@@ -105,7 +105,7 @@ cd ~/.ssh
 nano config
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 或者使用其他编辑器，例如：
 
@@ -113,7 +113,7 @@ nano config
 vi config
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 然后再将这些添加上去：
 
@@ -124,9 +124,9 @@ Host github.com
     User git
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
-我这里是使用nano来编辑的，如果 `config` 文件已经存在，编辑它；否则，创建新文件并开始编辑。![image-20240130214757661](C:\Users\30845\AppData\Roaming\Typora\typora-user-images\image-20240130214757661.png)
+
+我这里是使用nano来编辑的，如果 `config` 文件已经存在，编辑它；否则，创建新文件并开始编辑。![img](https://img-blog.csdnimg.cn/direct/94d8d3fe8e7b437dbc4aa38aa4390e80.png)
 
 ## 7.保存文件并关闭文本编辑器
 
@@ -138,7 +138,7 @@ Host github.com
 ssh -T git@github.com
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 如果成功，则会显示以下信息：
 
@@ -146,7 +146,7 @@ ssh -T git@github.com
 Hi USERNAME! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## 9.现在可以试一试拉取代码啦
 
@@ -154,7 +154,7 @@ Hi USERNAME! You've successfully authenticated, but GitHub does not provide shel
 git clone git@github.com:WindSky9975/hello-world.git
 ```
 
-![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
 
 ## 
 
