@@ -1,8 +1,6 @@
-之前github项目拉取超时，最后我搞了好久才成功，希望能够帮助大家。 
+ 之前github项目拉取超时，最后我搞了好久才成功，希望能够帮助大家。 
 
-注：所有命令均在gitbash中输入 
-
-![img](https://img-blog.csdnimg.cn/direct/94d8d3fe8e7b437dbc4aa38aa4390e80.png)![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+注：所有命令均在gitbash中输入 ![image-20240130214737106](C:\Users\30845\AppData\Roaming\Typora\typora-user-images\image-20240130214737106.png)
 
 # 一、 步骤一
 
@@ -128,9 +126,7 @@ Host github.com
 
 ![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
 
-我这里是使用nano来编辑的，如果 `config` 文件已经存在，编辑它；否则，创建新文件并开始编辑。
-
-![img](https://img-blog.csdnimg.cn/direct/2f71f836f8f44d16883fffec8737fa08.png)![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+我这里是使用nano来编辑的，如果 `config` 文件已经存在，编辑它；否则，创建新文件并开始编辑。![image-20240130214757661](C:\Users\30845\AppData\Roaming\Typora\typora-user-images\image-20240130214757661.png)
 
 ## 7.保存文件并关闭文本编辑器
 
@@ -151,5 +147,15 @@ Hi USERNAME! You've successfully authenticated, but GitHub does not provide shel
 ```
 
 ![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
+## 9.现在可以试一试拉取代码啦
+
+```bash
+git clone git@github.com:WindSky9975/hello-world.git
+```
+
+![点击并拖拽以移动](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw==)
+
+## 
 
 信息来源：[github文档ssh故障排除](https://docs.github.com/en/authentication/troubleshooting-ssh/using-ssh-over-the-https-port)
